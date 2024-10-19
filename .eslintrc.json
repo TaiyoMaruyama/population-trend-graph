@@ -4,11 +4,22 @@
   "rules": {
     "indent": ["error", 2],
     "no-console": "error",
-    "quotes": ["error", "single", { "avoidEscape": true }],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
     "semi": ["error", "always"],
     "react/self-closing-comp": "error",
     "@typescript-eslint/no-unused-vars": "off",
-    "no-duplicate-imports": ["error", { "includeExports": true }],
+    "no-duplicate-imports": [
+      "error",
+      {
+        "includeExports": true
+      }
+    ],
     "unused-imports/no-unused-imports": "warn",
     "unused-imports/no-unused-vars": [
       "warn",
@@ -19,7 +30,12 @@
         "argsIgnorePattern": "^_"
       }
     ],
-    "import/newline-after-import": ["warn", { "count": 1 }],
+    "import/newline-after-import": [
+      "warn",
+      {
+        "count": 1
+      }
+    ],
     "import/order": [
       "warn",
       {
