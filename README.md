@@ -6,10 +6,12 @@ RESAS(地域経済分析システム) API から取得した都道府県情報�
 
 ### インストール
 
-任意のディレクトリで、以下のコマンドを実行してください。
+任意のディレクトリで、以下のコマンドを実行してください。<br>
+`npm run prepare`コマンドを実行することでHuskyがGitフックを設定します。
 
 ```sh
 git clone https://github.com/TaiyoMaruyama/population-trend-graph.git
 cd population-trend-graph
 npm ci
+npm run prepare
 ```
