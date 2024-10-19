@@ -7,7 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky",
+    "check-types": "tsc --pretty --noEmit",
+    "check-format": "prettier --check .",
+    "check-lint": "eslint . --ext ts --ext tsx --ext js",
+    "test-all": "npm run check-format && npm run check-lint && npm run check-types"
   },
   "dependencies": {
     "next": "14.2.15",
@@ -24,6 +29,7 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-unused-imports": "^4.1.4",
+    "husky": "^9.1.6",
     "prettier": "^3.3.3",
     "typescript": "^5"
   }
