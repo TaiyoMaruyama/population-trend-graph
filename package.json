@@ -12,7 +12,8 @@
     "check-types": "tsc --pretty --noEmit",
     "check-format": "prettier --check .",
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
-    "test-all": "npm run check-format && npm run check-lint && npm run check-types"
+    "check-all": "npm run check-format && npm run check-lint && npm run check-types",
+    "test:atoms": "jest --config jest.atoms.config.ts"
   },
   "dependencies": {
     "@emotion/css": "^11.13.4",
@@ -23,6 +24,9 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.2",
+    "@testing-library/react": "^16.0.1",
+    "@types/jest": "^29.5.13",
     "@types/node": "^20",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18",
@@ -33,7 +37,11 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-unused-imports": "^4.1.4",
     "husky": "^9.1.6",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "prettier": "^3.3.3",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
     "typescript": "5.5.4"
   }
 }
