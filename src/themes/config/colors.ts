@@ -1,9 +1,9 @@
 const colors = {
   primary: {
+    disabled: '#b3d1ff',
     light: '#63a4ff',
     main: '#1976d2',
     dark: '#004ba0',
-    contrastText: '#fff',
   },
   background: {
     default: '#f5f5f5',
@@ -13,6 +13,7 @@ const colors = {
     primary: '#333',
     secondary: '#888',
     disabled: '#bbb',
+    white: '#fff',
   },
 };
 
