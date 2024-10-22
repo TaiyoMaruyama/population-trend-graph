@@ -1,10 +1,15 @@
 import { css } from '@emotion/react';
+import theme from '@/themes/theme';
+
+const { text, background } = theme.colors;
 
 const globalStyles = css`
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: ${text.primary};
+    background-color: ${background.default};
   }
 
   html {

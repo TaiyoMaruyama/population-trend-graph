@@ -1,7 +1,7 @@
 'use client';
 
 import { Global } from '@emotion/react';
-import globalStyles from '@/themes/config/globalStyles';
+import globalStyles from '@/styles/globalStyles';
 
 const GlobalStyles = () => {
   return <Global styles={globalStyles} />;
