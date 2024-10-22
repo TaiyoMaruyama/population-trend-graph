@@ -19,21 +19,21 @@ describe('Typography', () => {
     expect(labelElement.tagName).toBe('H6');
   });
 
-  // カスタムバリアントが正しくレンダリングされるかテスト
+  // カスタムバリアントが正しくレンダリングされるか
   it('renders with custom variant (h1)', () => {
     render(<Typography variant='h1'>{testText}</Typography>);
     const labelElement = screen.getByText(testText);
     expect(labelElement.tagName).toBe('H1');
   });
 
-  // boldプロップが正しく反映されるかテスト
+  // boldプロップが正しく反映されるか
   it('applies bold styling when bold prop is true', () => {
     render(<Typography bold>{testText}</Typography>);
     const labelElement = screen.getByText(testText);
     expect(labelElement).toHaveStyle('font-weight: bold');
   });
 
-  // childrenプロップが正しくレンダリングされるかテスト
+  // childrenプロップが正しくレンダリングされるか
   it('renders children correctly', () => {
     const testChild = <span>{testText}</span>;
     render(<Typography>{testChild}</Typography>);
