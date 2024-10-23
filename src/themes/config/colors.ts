@@ -6,6 +6,8 @@ const colors = {
     dark: '#004ba0',
   },
   background: {
+    grey: '#bbb',
+    lightgrey: '#d7d7d7',
     default: '#f5f5f5',
     paper: '#fff',
   },
