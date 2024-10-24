@@ -1,0 +1,11 @@
+:root {
+  --color-primary-disabled: #b3d1ff;
+  --color-primary-main: #1976d2;
+
+  --color-background-grey: #bbb;
+  --color-background-default: #f5f5f5;
+  --color-background-white: #fff;
+
+  --color-text-default: #333;
+  --color-text-white: #fff;
+}

@@ -1,8 +1,4 @@
-'use client';
-
-import { ThemeProvider } from '@emotion/react';
-import GlobalStyles from '@/components/common/GlobalStyles';
-import theme from '@/themes/theme';
+import '../styles/globals.css';
 
 export default function RootLayout({
   children,
@@ -10,13 +6,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <GlobalStyles />
-      <ThemeProvider theme={theme}>
-        <html lang='ja'>
-          <body>{children}</body>
-        </html>
-      </ThemeProvider>
-    </>
+    <html lang='ja'>
+      <body>{children}</body>
+    </html>
   );
 }
