@@ -8,7 +8,13 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, disabled = false }) => 
   `;
 
   return (
-    <button className={buttonStyle} onClick={onClick} disabled={disabled}>
+    <button
+      className={buttonStyle}
+      onClick={disabled ? undefined : onClick}
+      disabled={disabled}
+      aria-disabled={disabled}
+      aria-label={label}
+    >
       {label}
     </button>
   );
