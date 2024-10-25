@@ -1,5 +1,6 @@
 @use '../../../styles/variables/spacing' as spacing;
 @use '../../../styles/variables/colors' as color;
+@use '../../../styles/mixins/focus' as focus;
 
 .checkboxContainer {
   display: flex;
@@ -15,9 +16,8 @@
       background-color: color.$primary-main;
     }
 
-    &:focus {
-      outline: spacing.$min solid color.$primary-main;
-      outline-offset: spacing.$min;
+    &:focus-visible {
+      @include focus.focus-outline;
     }
   }
 

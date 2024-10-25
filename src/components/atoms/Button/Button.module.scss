@@ -1,5 +1,6 @@
 @use '../../../styles/variables/colors' as color;
 @use '../../../styles/variables/spacing' as spacing;
+@use '../../../styles/mixins/focus' as focus;
 
 .button {
   background-color: color.$primary-main;
@@ -14,5 +15,9 @@
   &.disabled {
     background-color: color.$primary-disabled;
     cursor: default;
+  }
+
+  &:focus-visible {
+    @include focus.focus-outline;
   }
 }
