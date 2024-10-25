@@ -1,0 +1,18 @@
+@use '../../../styles/variables/colors' as color;
+@use '../../../styles/variables/spacing' as spacing;
+
+.button {
+  background-color: color.$primary-main;
+  padding: spacing.$xs spacing.$md;
+  color: color.$text-white;
+  border: none;
+
+  &:hover {
+    background-color: color.$primary-light;
+  }
+
+  &.disabled {
+    background-color: color.$primary-disabled;
+    cursor: default;
+  }
+}
