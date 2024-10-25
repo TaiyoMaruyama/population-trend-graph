@@ -17,10 +17,10 @@ const createJestConfig = (directory: Directory) => {
     collectCoverage: true,
     coverageDirectory: `coverage/${directory}`,
     collectCoverageFrom: [
-      `src/components/${directory}/**/*.js`,
-      `src/components/${directory}/**/*.jsx`,
       `src/components/${directory}/**/*.ts`,
       `src/components/${directory}/**/*.tsx`,
+      `!src/components/${directory}/**/*.stories.ts`,
+      `!src/components/${directory}/**/*.stories.tsx`,
     ],
     coverageThreshold: coverageThreshold,
     testMatch: [`**/src/components/${directory}/**/*.{test,spec}.{js,jsx,ts,tsx}`],
