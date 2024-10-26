@@ -1,13 +1,13 @@
-'use client';
-
-import { StyledTab } from './Tab.styles';
+import styles from './Tab.module.scss';
 import { TabProps } from './Tab.types';
 
 const Tab: React.FC<TabProps> = ({ label, selected, onClick }) => {
+  const tabStyle = `${styles.tab} ${selected ? styles.selected : ''}`;
+
   return (
-    <StyledTab selected={selected} onClick={onClick}>
+    <button className={tabStyle} onClick={selected ? undefined : onClick}>
       {label}
-    </StyledTab>
+    </button>
   );
 };
 

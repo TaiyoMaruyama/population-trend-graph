@@ -6,7 +6,7 @@
   background-color: color.$primary-main;
   padding: spacing.$xs spacing.$md;
   color: color.$text-white;
-  border: none;
+  border-radius: spacing.$xs;
 
   &:hover {
     background-color: color.$primary-light;

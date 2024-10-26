@@ -1,0 +1,24 @@
+@use '../../../styles/variables/colors' as color;
+@use '../../../styles/variables/spacing' as spacing;
+
+.tab {
+  width: 5.5rem;
+  padding: spacing.$sm 0;
+  border-top-left-radius: spacing.$xs;
+  border-top-right-radius: spacing.$xs;
+  background-color: color.$background-grey;
+
+  &.selected {
+    background-color: color.$primary-main;
+    color: color.$text-white;
+    cursor: default;
+
+    &:hover {
+      background-color: color.$primary-main;
+    }
+  }
+
+  &:hover {
+    background-color: color.$background-lightgrey;
+  }
+}
