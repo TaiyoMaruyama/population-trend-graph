@@ -1,22 +1,21 @@
 import { fn } from '@storybook/test';
-import Button from './Button';
-import { ButtonProps } from './Button.types';
+import Tab from './Tab';
+import { TabProps } from './Tab.types';
 import type { Meta, StoryObj } from '@storybook/react';
 
-const meta: Meta<ButtonProps> = {
-  title: 'atoms/Button',
-  component: Button,
+const meta: Meta<TabProps> = {
+  title: 'atoms/Tab',
+  component: Tab,
   tags: ['autodocs'],
   args: { onClick: fn() },
 };
 
 export default meta;
-
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    label: 'Button',
-    disabled: false,
+    label: 'Tab',
+    selected: false,
   },
 };
