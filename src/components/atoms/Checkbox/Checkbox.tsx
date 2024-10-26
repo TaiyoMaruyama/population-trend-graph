@@ -3,7 +3,7 @@ import { CheckboxProps } from './Checkbox.types';
 
 const Checkbox: React.FC<CheckboxProps> = ({ id, label, checked, onChange }) => {
   const checkboxContainerStyle = `
-     ${styles.checkboxContainer}
+    ${styles.checkboxContainer}
   `;
 
   const inputStyle = `
