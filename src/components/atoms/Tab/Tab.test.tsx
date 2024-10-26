@@ -1,59 +1,46 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import theme from '@/themes/theme';
-import Tab from './Tab';
+import { render, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import Tab from './Tab';
+import { TabProps } from './Tab.types';
 
-describe('Tab', () => {
-  const tabLabel = 'Test Tab';
-  const handleClick = jest.fn();
-  const { background, text } = theme.colors;
+describe('Tab Component', () => {
+  const defaultProps = {
+    label: 'Test Tab',
+    selected: false,
+    onClick: jest.fn(),
+  };
 
   beforeEach(() => {
-    handleClick.mockClear();
+    defaultProps.onClick.mockClear();
   });
 
-  // Tabのラベルが正しく反映しているか
-  it('renders the tab with the correct label', () => {
-    render(<Tab label={tabLabel} selected={false} onClick={() => {}} />);
-    const tabElement = screen.getByText(tabLabel);
-    expect(tabElement).toBeVisible();
+  const renderTab = (props: Partial<TabProps> = {}) => {
+    render(<Tab {...defaultProps} {...props} />);
+  };
+
+  // 正しいラベルが表示されることを確認
+  it('renders with the correct label', () => {
+    renderTab();
+    expect(screen.getByRole('button')).toHaveTextContent(defaultProps.label);
   });
 
-  // onClickが正常に動作しているか
-  it('calls onClick when clicked', () => {
-    render(<Tab label={tabLabel} selected={false} onClick={handleClick} />);
-    const buttonElement = screen.getByText(tabLabel);
-    fireEvent.click(buttonElement);
-    expect(handleClick).toHaveBeenCalledTimes(1);
+  // selectedプロパティがtrueのとき、適切なスタイルが適用されることを確認
+  it('applies selected styles when selected is true', () => {
+    renderTab({ selected: true });
+    expect(screen.getByRole('button')).toHaveClass('selected');
   });
 
-  // selectedがtrueの場合のスタイルをテスト
-  it('test styles when selected is true', () => {
-    render(<Tab label={tabLabel} selected={true} onClick={handleClick} />);
-    const buttonElement = screen.getByText(tabLabel);
-    expect(buttonElement).toHaveStyle({
-      cursor: 'default',
-      color: text.white,
-    });
+  // selectedプロパティがtrueのとき、onClickが呼び出されないことを確認
+  it('does not call onClick when selected', () => {
+    renderTab({ selected: true });
+    fireEvent.click(screen.getByRole('button'));
+    expect(defaultProps.onClick).not.toHaveBeenCalled();
   });
 
-  // selectedがfalseの場合のスタイルをテスト
-  it('test no-selected styles when selected is false', () => {
-    render(<Tab label={tabLabel} selected={false} onClick={handleClick} />);
-    const buttonElement = screen.getByText(tabLabel);
-    expect(buttonElement).toHaveStyle({
-      cursor: 'pointer',
-      color: text.primary,
-    });
-  });
-
-  // Hover時のスタイルをテスト
-  it('hover styles when not selected and hovered', () => {
-    render(<Tab label={tabLabel} selected={false} onClick={handleClick} />);
-    const buttonElement = screen.getByText(tabLabel);
-    fireEvent.mouseOver(buttonElement);
-    expect(buttonElement).toHaveStyle({
-      backgroundColor: background.lightgrey,
-    });
+  // selectedプロパティがfalseのとき、onClickが呼び出されることを確認
+  it('calls onClick when not selected', () => {
+    renderTab({ selected: false });
+    fireEvent.click(screen.getByRole('button'));
+    expect(defaultProps.onClick).toHaveBeenCalledTimes(1);
   });
 });

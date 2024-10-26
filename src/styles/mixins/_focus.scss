@@ -1,0 +1,7 @@
+@use '../variables/colors' as color;
+@use '../variables/spacing' as spacing;
+
+@mixin focus-outline {
+  outline: spacing.$min solid color.$primary-main;
+  outline-offset: spacing.$min;
+}

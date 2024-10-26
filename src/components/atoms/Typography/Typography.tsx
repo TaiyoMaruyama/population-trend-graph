@@ -1,14 +1,11 @@
-'use client';
-
-import StyledTypography from './Typography.styles';
+import styles from './Typography.module.scss';
 import { TypographyProps } from './Typography.types';
 
-const Typography: React.FC<TypographyProps> = ({ variant = 'h6', ...props }) => {
-  return (
-    <StyledTypography as={variant} {...props}>
-      {props.children}
-    </StyledTypography>
-  );
+const Typography: React.FC<TypographyProps> = ({ variant = 'p', bold = false, text }) => {
+  const Tag = variant;
+  const typographyStyle = `${bold ? styles.textBold : ''}`;
+
+  return <Tag className={typographyStyle}>{text}</Tag>;
 };
 
 export default Typography;

@@ -1,0 +1,23 @@
+@use '../../../styles/variables/colors' as color;
+@use '../../../styles/variables/spacing' as spacing;
+@use '../../../styles/mixins/focus' as focus;
+
+.button {
+  background-color: color.$primary-main;
+  padding: spacing.$xs spacing.$md;
+  color: color.$text-white;
+  border-radius: spacing.$xs;
+
+  &:hover {
+    background-color: color.$primary-light;
+  }
+
+  &.disabled {
+    background-color: color.$primary-disabled;
+    cursor: default;
+  }
+
+  &:focus-visible {
+    @include focus.focus-outline;
+  }
+}

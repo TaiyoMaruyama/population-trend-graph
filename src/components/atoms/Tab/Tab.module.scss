@@ -1,0 +1,33 @@
+@use '../../../styles/variables/colors' as color;
+@use '../../../styles/variables/spacing' as spacing;
+@use '../../../styles/mixins/focus' as focus;
+
+.tab {
+  width: 5.5rem;
+  padding: spacing.$sm 0;
+  border-top-left-radius: spacing.$xs;
+  border-top-right-radius: spacing.$xs;
+  background-color: color.$background-grey;
+  position: relative;
+
+  &.selected {
+    background-color: color.$primary-main;
+    color: color.$text-white;
+    cursor: default;
+
+    &:hover {
+      background-color: color.$primary-main;
+    }
+  }
+
+  &:hover {
+    background-color: color.$background-lightgrey;
+  }
+
+  &:focus-visible {
+    // outlineが隣のTabの下に入り重なるのでカスタム
+    outline: none;
+    box-shadow: 0 0 0 2px color.$primary-main;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,28 @@
+@use '../../../styles/variables/spacing' as spacing;
+@use '../../../styles/variables/colors' as color;
+@use '../../../styles/mixins/focus' as focus;
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  margin: spacing.$xs;
+  width: 6rem;
+
+  .input {
+    margin-right: spacing.$sm;
+    cursor: pointer;
+
+    &:checked {
+      background-color: color.$primary-main;
+    }
+
+    &:focus-visible {
+      @include focus.focus-outline;
+    }
+  }
+
+  .label {
+    margin-right: spacing.$sm;
+    cursor: pointer;
+  }
+}

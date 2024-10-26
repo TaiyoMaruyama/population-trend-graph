@@ -1,54 +1,59 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Checkbox from './Checkbox';
+import { CheckboxProps } from './Checkbox.types';
 
-describe('Checkbox', () => {
-  const testLabel = 'Test Checkbox';
-  const testId = 'test-checkbox';
-  let mockOnChange: jest.Mock;
+describe('Checkbox Component', () => {
+  const defaultProps = {
+    id: 'test-checkbox',
+    label: 'Test Checkbox',
+    checked: false,
+    onChange: jest.fn(),
+  };
 
   beforeEach(() => {
-    mockOnChange = jest.fn();
+    defaultProps.onChange.mockClear();
   });
 
-  const renderCheckbox = (checked: boolean) =>
-    render(<Checkbox id={testId} label={testLabel} checked={checked} onChange={mockOnChange} />);
+  const renderCheckbox = (props: Partial<CheckboxProps> = {}) => {
+    render(<Checkbox {...defaultProps} {...props} />);
+  };
 
-  // チェックボックスとそのラベルが正しく表示されるか
+  // チェックボックスとそのラベルが正しく表示されることを確認
   it('renders the Checkbox with the correct label', () => {
-    renderCheckbox(false);
-    const checkboxElement = screen.getByLabelText(testLabel);
+    renderCheckbox();
+    const checkboxElement = screen.getByLabelText(defaultProps.label);
     expect(checkboxElement).toBeVisible();
     expect(checkboxElement).toBeInstanceOf(HTMLInputElement);
   });
 
-  // チェックプロップがtrueのとき、チェックボックスが正しくチェック状態になるか
+  // checkedプロパティがtrueのとき、チェックボックスがチェック状態になることを確認
   it('renders the Checkbox as checked when checked prop is true', () => {
-    renderCheckbox(true);
-    const checkboxElement = screen.getByLabelText(testLabel);
+    renderCheckbox({ checked: true });
+    const checkboxElement = screen.getByLabelText(defaultProps.label);
     expect(checkboxElement).toBeChecked();
   });
 
-  // チェックプロップがfalseのとき、チェックボックスがチェックされていない状態で表示されるか
+  // checkedプロパティがfalseのとき、チェックボックスがチェックされていない状態で表示されることを確認
   it('renders the Checkbox as unchecked when checked prop is false', () => {
-    renderCheckbox(false);
-    const checkboxElement = screen.getByLabelText(testLabel);
+    renderCheckbox({ checked: false });
+    const checkboxElement = screen.getByLabelText(defaultProps.label);
     expect(checkboxElement).not.toBeChecked();
   });
 
-  // チェックボックスをクリックした際にonChangeが正しく呼び出されるか
-  it('triggers onChange when the Checkbox clicked', () => {
-    renderCheckbox(false);
-    const checkboxElement = screen.getByLabelText(testLabel);
+  // チェックボックスをクリックした際にonChangeが正しく呼び出されることを確認
+  it('triggers onChange when the Checkbox is clicked', () => {
+    renderCheckbox();
+    const checkboxElement = screen.getByLabelText(defaultProps.label);
     fireEvent.click(checkboxElement);
-    expect(mockOnChange).toHaveBeenCalledTimes(1);
+    expect(defaultProps.onChange).toHaveBeenCalledTimes(1);
   });
 
-  // ラベルをクリックした際にonChangeが正しく呼び出されるか
+  // ラベルをクリックした際にonChangeが正しく呼び出されることを確認
   it('triggers onChange when the label is clicked', () => {
-    renderCheckbox(false);
-    const labelElement = screen.getByText(testLabel);
+    renderCheckbox();
+    const labelElement = screen.getByText(defaultProps.label);
     fireEvent.click(labelElement);
-    expect(mockOnChange).toHaveBeenCalledTimes(1);
+    expect(defaultProps.onChange).toHaveBeenCalledTimes(1);
   });
 });

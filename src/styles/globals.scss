@@ -1,0 +1,68 @@
+@use './variables/colors' as color;
+@use './variables/fonts' as font;
+@use './mixins/respond-to-mobile' as respond-to-mobile;
+@use './variables/spacing' as spacing;
+
+@import './base/reset';
+
+* {
+  color: color.$text-default;
+  background-color: color.$background-default;
+}
+
+html {
+  font-size: font.$size-base;
+  @include respond-to-mobile.respond-to-mobile {
+    font-size: font.$size-base-mobile;
+  }
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: font.$line-height-base;
+}
+
+h1 {
+  font-size: font.$size-h1;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: font.$size-h2;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: font.$size-h3;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: font.$size-h4;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: font.$size-h5;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: font.$size-h6;
+  font-weight: bold;
+}
+
+p {
+  font-size: font.$size-h6;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: color.$text-default;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
