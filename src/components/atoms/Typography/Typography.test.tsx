@@ -1,43 +1,38 @@
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import Typography from './Typography';
+import styles from './Typography.module.scss';
+import '@testing-library/jest-dom';
 
-describe('Typography', () => {
-  const testText = 'Test Text';
-
-  // テキストを代入して該当のテキストが要素に含まれるか
-  it('renders the Typography text', () => {
-    render(<Typography>{testText}</Typography>);
-    const labelElement = screen.getByText(testText);
-    expect(labelElement).toBeVisible();
+describe('Typography Component', () => {
+  // デフォルトの段落タグとテキストがレンダリングされることを確認
+  it('renders with default paragraph tag and text', () => {
+    render(<Typography text='Default Text' />);
+    const element = screen.getByText(/Default Text/i);
+    expect(element).toBeInTheDocument();
+    expect(element.tagName).toBe('P'); // デフォルトは <p> タグ
   });
 
-  // デフォルトのvariantが正しくレンダリングされるか
-  it('renders with default variant (h6)', () => {
-    render(<Typography>{testText}</Typography>);
-    const labelElement = screen.getByText(testText);
-    expect(labelElement.tagName).toBe('H6');
+  // 指定された見出しタグでレンダリングされることを確認
+  it('renders with specified heading tag', () => {
+    render(<Typography variant='h1' text='Heading Text' />);
+    const element = screen.getByText(/Heading Text/i);
+    expect(element).toBeInTheDocument();
+    expect(element.tagName).toBe('H1'); // 指定したタグでレンダリング
   });
 
-  // カスタムバリアントが正しくレンダリングされるか
-  it('renders with custom variant (h1)', () => {
-    render(<Typography variant='h1'>{testText}</Typography>);
-    const labelElement = screen.getByText(testText);
-    expect(labelElement.tagName).toBe('H1');
+  // boldプロパティがtrueのとき、太字のスタイルが適用されることを確認
+  it('renders bold text when bold prop is true', () => {
+    render(<Typography text='Bold Text' bold={true} />);
+    const element = screen.getByText(/Bold Text/i);
+    expect(element).toBeInTheDocument();
+    expect(element).toHaveClass(styles.textBold); // styles.textBold が適用されることを確認
   });
 
-  // boldプロップが正しく反映されるか
-  it('applies bold styling when bold prop is true', () => {
-    render(<Typography bold>{testText}</Typography>);
-    const labelElement = screen.getByText(testText);
-    expect(labelElement).toHaveStyle('font-weight: bold');
-  });
-
-  // childrenプロップが正しくレンダリングされるか
-  it('renders children correctly', () => {
-    const testChild = <span>{testText}</span>;
-    render(<Typography>{testChild}</Typography>);
-    const labelElement = screen.getByText(testText);
-    expect(labelElement).toBeVisible();
+  // boldプロパティがfalseのとき、太字のスタイルが適用されないことを確認
+  it('does not render bold text when bold prop is false', () => {
+    render(<Typography text='Regular Text' bold={false} />);
+    const element = screen.getByText(/Regular Text/i);
+    expect(element).toBeInTheDocument();
+    expect(element).not.toHaveClass(styles.textBold); // styles.textBold が適用されないことを確認
   });
 });
