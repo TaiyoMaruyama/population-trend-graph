@@ -14,6 +14,7 @@
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
     "check-all": "npm run check-format && npm run check-lint && npm run check-types",
     "test:atoms": "jest --config jest.atoms.config.ts",
+    "test:molecules": "jest --config jest.molecules.config.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
