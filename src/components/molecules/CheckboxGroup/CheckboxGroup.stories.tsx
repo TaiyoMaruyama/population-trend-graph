@@ -7,7 +7,7 @@ const meta: Meta<CheckboxGroupProps> = {
   title: 'molecules/CheckboxGroup',
   component: CheckboxGroup,
   tags: ['autodocs'],
-  args: { setCheckedList: fn() },
+  args: { handleCheck: fn() },
 };
 
 export default meta;

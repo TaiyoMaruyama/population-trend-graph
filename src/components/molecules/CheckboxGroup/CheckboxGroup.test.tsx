@@ -10,7 +10,7 @@ const prefectures: Prefecture[] = [
 ];
 
 describe('CheckboxGroup Component', () => {
-  const mockSetCheckedList = jest.fn();
+  const mockHandleCheck = jest.fn();
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -22,7 +22,7 @@ describe('CheckboxGroup Component', () => {
       <CheckboxGroup
         prefectures={prefectures}
         checkedList={checkedList}
-        setCheckedList={mockSetCheckedList}
+        handleCheck={mockHandleCheck}
       />
     );
   };
@@ -31,24 +31,24 @@ describe('CheckboxGroup Component', () => {
   it('renders checkboxes for each prefecture', () => {
     renderCheckboxGroup();
     prefectures.forEach(({ prefName }) => {
-      expect(screen.getByLabelText(prefName)).toBeInTheDocument();
+      expect(screen.getByLabelText(prefName)).toBeVisible();
     });
   });
 
-  // 北海道のチェックボックスをクリックしてsetCheckedListが正しい値で呼び出されたか確認
-  it('calls setCheckedList with correct values when checkbox is checked', () => {
+  // 北海道のチェックボックスをクリックしてhandleCheckが正しい値で呼び出されたか確認
+  it('calls handleCheck with correct values when checkbox is checked', () => {
     renderCheckboxGroup();
     fireEvent.click(screen.getByLabelText('北海道'));
-    expect(mockSetCheckedList).toHaveBeenCalledWith([{ prefCode: 1, prefName: '北海道' }]);
+    expect(mockHandleCheck).toHaveBeenCalledWith({ prefCode: 1, prefName: '北海道' });
   });
 
   // 北海道がチェックされた状態でCheckboxGroupをレンダリングし
   // 北海道のチェックボックスをクリックしてチェックを外す
-  // setCheckedListが空の配列で呼び出されたか確認
-  it('calls setCheckedList to remove the prefecture when checkbox is unchecked', () => {
+  // handleCheckが再び呼び出されるか確認
+  it('calls handleCheck to remove the prefecture when checkbox is unchecked', () => {
     renderCheckboxGroup([{ prefCode: 1, prefName: '北海道' }]);
     fireEvent.click(screen.getByLabelText('北海道'));
-    expect(mockSetCheckedList).toHaveBeenCalledWith([]);
+    expect(mockHandleCheck).toHaveBeenCalledWith({ prefCode: 1, prefName: '北海道' });
   });
 
   // 北海道がチェックされている状態でCheckboxGroupをレンダリング
@@ -58,7 +58,6 @@ describe('CheckboxGroup Component', () => {
 
     const checkedCheckbox = screen.getByLabelText('北海道');
     const uncheckedCheckbox = screen.getByLabelText('青森県');
-
     expect(checkedCheckbox).toBeChecked();
     expect(uncheckedCheckbox).not.toBeChecked();
   });
