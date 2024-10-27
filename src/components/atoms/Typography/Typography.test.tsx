@@ -17,7 +17,7 @@ describe('Typography Component', () => {
     render(<Typography variant='h1' text='Heading Text' />);
     const element = screen.getByText(/Heading Text/i);
     expect(element).toBeInTheDocument();
-    expect(element.tagName).toBe('H1'); // 指定したタグでレンダリング
+    expect(element.tagName).toBe('H1');
   });
 
   // boldプロパティがtrueのとき、太字のスタイルが適用されることを確認
@@ -25,7 +25,7 @@ describe('Typography Component', () => {
     render(<Typography text='Bold Text' bold={true} />);
     const element = screen.getByText(/Bold Text/i);
     expect(element).toBeInTheDocument();
-    expect(element).toHaveClass(styles.textBold); // styles.textBold が適用されることを確認
+    expect(element).toHaveClass(styles.textBold);
   });
 
   // boldプロパティがfalseのとき、太字のスタイルが適用されないことを確認
@@ -33,6 +33,6 @@ describe('Typography Component', () => {
     render(<Typography text='Regular Text' bold={false} />);
     const element = screen.getByText(/Regular Text/i);
     expect(element).toBeInTheDocument();
-    expect(element).not.toHaveClass(styles.textBold); // styles.textBold が適用されないことを確認
+    expect(element).not.toHaveClass(styles.textBold);
   });
 });

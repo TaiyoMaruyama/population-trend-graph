@@ -1,0 +1,14 @@
+@use '../../../styles/variables/colors' as color;
+@use '../../../styles/variables/spacing' as spacing;
+
+.header {
+  background-color: color.$primary-main;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding: spacing.$xs;
+
+  h5 {
+    color: color.$text-white;
+  }
+}
