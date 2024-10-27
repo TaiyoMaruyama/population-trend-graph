@@ -8,7 +8,7 @@ describe('Typography Component', () => {
   it('renders with default paragraph tag and text', () => {
     render(<Typography text='Default Text' />);
     const element = screen.getByText(/Default Text/i);
-    expect(element).toBeInTheDocument();
+    expect(element).toBeVisible();
     expect(element.tagName).toBe('P'); // デフォルトは <p> タグ
   });
 
@@ -16,7 +16,7 @@ describe('Typography Component', () => {
   it('renders with specified heading tag', () => {
     render(<Typography variant='h1' text='Heading Text' />);
     const element = screen.getByText(/Heading Text/i);
-    expect(element).toBeInTheDocument();
+    expect(element).toBeVisible();
     expect(element.tagName).toBe('H1');
   });
 
@@ -24,7 +24,7 @@ describe('Typography Component', () => {
   it('renders bold text when bold prop is true', () => {
     render(<Typography text='Bold Text' bold={true} />);
     const element = screen.getByText(/Bold Text/i);
-    expect(element).toBeInTheDocument();
+    expect(element).toBeVisible();
     expect(element).toHaveClass(styles.textBold);
   });
 
@@ -32,7 +32,7 @@ describe('Typography Component', () => {
   it('does not render bold text when bold prop is false', () => {
     render(<Typography text='Regular Text' bold={false} />);
     const element = screen.getByText(/Regular Text/i);
-    expect(element).toBeInTheDocument();
+    expect(element).toBeVisible();
     expect(element).not.toHaveClass(styles.textBold);
   });
 });
