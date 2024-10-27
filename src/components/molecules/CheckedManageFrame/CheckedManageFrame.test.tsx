@@ -36,7 +36,6 @@ describe('CheckedManageFrame Component', () => {
 
     const buttonElement = screen.getByRole('button', { name: /選択解除/i });
     buttonElement.click();
-
     expect(mockOnReset).toHaveBeenCalledTimes(1);
   });
 

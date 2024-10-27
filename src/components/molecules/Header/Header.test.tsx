@@ -8,7 +8,7 @@ describe('Header Component', () => {
   it('renders with the given title', () => {
     render(<Header title='Test Title' />);
     const titleElement = screen.getByText(/Test Title/i);
-    expect(titleElement).toBeInTheDocument();
+    expect(titleElement).toBeVisible();
   });
 
   // Headerのスタイルが正しく適用されていることを確認
