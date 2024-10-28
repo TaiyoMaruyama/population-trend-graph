@@ -10,8 +10,8 @@ jest.mock('../../../hooks/useFetchPrefecture');
 describe('PrefCheckboxGroup', () => {
   const mockHandleCheck = jest.fn();
   const mockPrefectures: Prefecture[] = [
-    { prefCode: 1, prefName: '東京' },
-    { prefCode: 2, prefName: '大阪' },
+    { prefCode: 1, prefName: '北海道' },
+    { prefCode: 2, prefName: '青森県' },
   ];
 
   beforeEach(() => {
@@ -48,19 +48,19 @@ describe('PrefCheckboxGroup', () => {
     render(<PrefCheckboxGroup checkedList={[]} handleCheck={mockHandleCheck} />);
 
     // 都道府県が正しくレンダリングされているかを確認
-    expect(screen.getByLabelText(/東京/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/大阪/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/北海道/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/青森県/i)).toBeInTheDocument();
 
     // チェックボックスのクリックをシミュレート
-    fireEvent.click(screen.getByLabelText(/東京/i));
+    fireEvent.click(screen.getByLabelText(/北海道/i));
     expect(mockHandleCheck).toHaveBeenCalledWith(mockPrefectures[0]);
   });
 
   test('checks the correct boxes based on checkedList', () => {
-    const checkedList = [{ prefCode: 1, prefName: '東京' }];
+    const checkedList = [{ prefCode: 1, prefName: '北海道' }];
     render(<PrefCheckboxGroup checkedList={checkedList} handleCheck={mockHandleCheck} />);
 
-    expect(screen.getByLabelText(/東京/i)).toBeChecked();
-    expect(screen.getByLabelText(/大阪/i)).not.toBeChecked();
+    expect(screen.getByLabelText(/北海道/i)).toBeChecked();
+    expect(screen.getByLabelText(/青森県/i)).not.toBeChecked();
   });
 });

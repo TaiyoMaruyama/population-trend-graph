@@ -8,7 +8,7 @@ import styles from './PrefSelectionFrame.module.scss';
 import { PrefSelectionFrameProps } from './PrefSelectionFrame.types';
 
 const PrefSelectionFrame: React.FC<PrefSelectionFrameProps> = ({
-  checkedPrefectures = [],
+  checkedPrefectures,
   setCheckedPrefectures,
 }) => {
   const handleReset = () => {
