@@ -7,4 +7,6 @@
   row-gap: spacing.$xs;
   padding: spacing.$sm;
   background-color: color.$background-white;
+  overflow: auto;
+  max-height: 40vh;
 }
