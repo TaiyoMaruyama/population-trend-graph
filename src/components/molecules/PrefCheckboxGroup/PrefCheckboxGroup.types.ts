@@ -1,7 +1,6 @@
 import { Prefecture } from '@/types';
 
-export interface CheckboxGroupProps {
-  prefectures: Prefecture[];
+export interface PrefCheckboxGroupProps {
   checkedList: Prefecture[];
   handleCheck: (prefecture: Prefecture) => void;
 }

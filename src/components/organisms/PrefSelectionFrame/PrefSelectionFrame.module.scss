@@ -1,0 +1,7 @@
+@use '../../../styles/variables/spacing' as spacing;
+
+.frameHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: spacing.$sm;
+}

@@ -15,6 +15,7 @@
     "check-all": "npm run check-format && npm run check-lint && npm run check-types",
     "test:atoms": "jest --config jest.atoms.config.ts",
     "test:molecules": "jest --config jest.molecules.config.ts",
+    "test:organisms": "jest --config jest.organisms.config.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -24,7 +25,8 @@
     "@emotion/styled": "^11.13.0",
     "next": "14.2.15",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "swr": "^2.2.5"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",
