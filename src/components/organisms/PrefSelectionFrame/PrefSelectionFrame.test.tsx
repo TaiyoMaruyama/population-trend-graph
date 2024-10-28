@@ -60,7 +60,7 @@ describe('PrefSelectionFrame Component', () => {
       );
     });
 
-    // すでにチェックされている都道府県のチェックボックスが再度クリックされた場合、状態が変わらないことを確認
+    // すでにチェックされている都道府県のチェックボックスを2回押下するともとに戻ることを確認
     it('does not change the state when already checked prefecture is clicked again', async () => {
       renderComponent();
       const checkbox = screen.getByLabelText('北海道');
