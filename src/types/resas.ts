@@ -29,6 +29,10 @@ export interface PopulationStructureData {
   data: { year: number; value: number }[];
 }
 
+export interface PopulationDataWithPrefecture extends Prefecture {
+  populationStructures: PopulationStructureData[];
+}
+
 export interface PopulationStructureResponse {
   message: null;
   result: {

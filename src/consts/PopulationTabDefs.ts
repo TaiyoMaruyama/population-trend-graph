@@ -1,7 +1,7 @@
 import { PopulationTab } from '@/components/molecules/PopulationTabGroup/PopulationTabGroup.types';
 import { PopulationTabId } from '@/types/resas';
 
-export const PopulationTabDefs: PopulationTab[] = [
+export const populationTabDefs: PopulationTab[] = [
   {
     id: PopulationTabId.TotalPopulation,
     label: '総人口',
