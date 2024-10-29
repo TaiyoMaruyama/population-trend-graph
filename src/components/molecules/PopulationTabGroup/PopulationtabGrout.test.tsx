@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
+import { populationTabDefs } from '@/consts/PopulationTabDefs';
 import { PopulationTabId } from '@/types/resas';
 import PopulationTabGroup from './PopulationTabGroup';
 import '@testing-library/jest-dom';
-import { populationTabDefs } from '@/consts/PopulationTabDefs';
 
 describe('PopulationTabGroup Component', () => {
   const mockOnClick = jest.fn();

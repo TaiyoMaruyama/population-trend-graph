@@ -1,9 +1,9 @@
 import { fn } from '@storybook/test';
+import { populationTabDefs } from '@/consts/PopulationTabDefs';
 import { PopulationTabId } from '@/types/resas';
 import PopulationTabGroup from './PopulationTabGroup';
 import { PopulationTabGroupProps } from './PopulationTabGroup.types';
 import type { Meta, StoryObj } from '@storybook/react';
-import { populationTabDefs } from '@/consts/PopulationTabDefs';
 
 const meta: Meta<PopulationTabGroupProps> = {
   title: 'molecules/PopulationTabGroup',
