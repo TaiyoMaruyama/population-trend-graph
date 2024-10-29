@@ -1,4 +1,4 @@
-import { Prefecture } from '@/types';
+import { Prefecture } from '@/types/resas';
 
 export interface PrefSelectionFrameProps {
   checkedPrefectures: Prefecture[];

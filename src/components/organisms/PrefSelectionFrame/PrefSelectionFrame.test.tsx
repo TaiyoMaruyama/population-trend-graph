@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, act } from '@testing-library/react';
 import useFetchPrefecture from '@/hooks/useFetchPrefecture';
-import { Prefecture } from '@/types';
+import { Prefecture } from '@/types/resas';
 import PrefSelectionFrame from './PrefSelectionFrame';
 import '@testing-library/jest-dom';
 

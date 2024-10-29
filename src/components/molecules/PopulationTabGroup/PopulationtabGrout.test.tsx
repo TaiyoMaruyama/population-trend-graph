@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { PopulationTabDefs } from '@/consts/PopulationTabDefs';
+import { PopulationTabId } from '@/types/resas';
 import PopulationTabGroup from './PopulationTabGroup';
-import { PopulationTabId } from './PopulationTabGroup.types';
 import '@testing-library/jest-dom';
 
 describe('PopulationTabGroup Component', () => {

@@ -1,9 +1,4 @@
-export enum PopulationTabId {
-  TotalPopulation = 'totalPopulation',
-  YouthPopulation = 'youthPopulation',
-  WorkingAgePopulation = 'workingAgePopulation',
-  ElderlyPopulation = 'elderlyPopulation',
-}
+import { PopulationTabId } from '@/types/resas';
 
 export interface PopulationTab {
   id: PopulationTabId;

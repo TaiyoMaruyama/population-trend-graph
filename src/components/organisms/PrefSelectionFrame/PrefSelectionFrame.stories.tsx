@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Prefecture } from '@/types';
+import { Prefecture } from '@/types/resas';
 import PrefSelectionFrame from './PrefSelectionFrame';
 import type { Meta, StoryObj } from '@storybook/react';
 

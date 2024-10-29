@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import { PrefectureResponse } from '@/types';
+import { PrefectureResponse } from '@/types/resas';
 
 const fetcher = async (url: string) => {
   const API_KEY = process.env.NEXT_PUBLIC_RESAS_API_KEY || '';

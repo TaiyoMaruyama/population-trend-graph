@@ -1,7 +1,5 @@
-import {
-  PopulationTab,
-  PopulationTabId,
-} from '@/components/molecules/PopulationTabGroup/PopulationTabGroup.types';
+import { PopulationTab } from '@/components/molecules/PopulationTabGroup/PopulationTabGroup.types';
+import { PopulationTabId } from '@/types/resas';
 
 export const PopulationTabDefs: PopulationTab[] = [
   {

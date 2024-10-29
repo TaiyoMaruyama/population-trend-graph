@@ -3,7 +3,7 @@
 import TextLabel from '@/components/atoms/TextLabel/TextLabel';
 import CheckedManageFrame from '@/components/molecules/CheckedManageFrame/CheckedManageFrame';
 import PrefCheckboxGroup from '@/components/molecules/PrefCheckboxGroup/PrefCheckboxGroup';
-import { Prefecture } from '@/types';
+import { Prefecture } from '@/types/resas';
 import styles from './PrefSelectionFrame.module.scss';
 import { PrefSelectionFrameProps } from './PrefSelectionFrame.types';
 
