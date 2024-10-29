@@ -29,7 +29,7 @@ const PopulationGraph: React.FC<PopulationGraphProps> = ({ populationData, tabVa
   return (
     <div className={styles.graph}>
       <ResponsiveContainer>
-        <LineChart data={graphData} margin={{ top: 40, right: 60, left: 10, bottom: 40 }}>
+        <LineChart data={graphData} margin={{ top: 40, right: 60, left: 10, bottom: 30 }}>
           {graphDataWithoutYear.map((key, index) => (
             <Line
               key={key}

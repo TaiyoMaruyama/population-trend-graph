@@ -10,10 +10,9 @@ export const tooltipStyle: React.CSSProperties = {
 export const legendStyle: React.CSSProperties = {
   ...commonFontSize,
   position: 'absolute',
-  bottom: 20,
+  bottom: 10,
   left: '50%',
   transform: 'translateX(-50%)',
   width: '100%',
-  padding: '1rem',
   backgroundColor: 'white',
 };
