@@ -27,7 +27,7 @@ jest.mock('recharts', () => {
 describe('PopulationGraph', () => {
   const mockPopulationData = [...populationData];
 
-  test('renders the population graph with data', async () => {
+  it('renders the population graph with data', async () => {
     render(
       <PopulationGraph
         populationData={mockPopulationData}
@@ -40,7 +40,7 @@ describe('PopulationGraph', () => {
     expect(svgElement).toBeInTheDocument();
   });
 
-  test('handles empty population data', () => {
+  it('handles empty population data', () => {
     render(<PopulationGraph populationData={[]} tabValue={PopulationTabId.TotalPopulation} />);
 
     // Ensure that the graph can handle empty data gracefully
