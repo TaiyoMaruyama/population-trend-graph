@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import useFetchPrefecture from '@/hooks/useFetchPrefecture';
-import { Prefecture } from '@/types';
+import { Prefecture } from '@/types/resas';
 import PrefCheckboxGroup from './PrefCheckboxGroup';
 import '@testing-library/jest-dom';
 

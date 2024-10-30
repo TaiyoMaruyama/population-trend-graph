@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import { PopulationTabDefs } from '@/consts/PopulationTabDefs';
+import { populationTabDefs } from '@/consts/PopulationTabDefs';
+import { PopulationTabId } from '@/types/resas';
 import PopulationTabGroup from './PopulationTabGroup';
-import { PopulationTabId } from './PopulationTabGroup.types';
 import '@testing-library/jest-dom';
 
 describe('PopulationTabGroup Component', () => {
@@ -10,14 +10,14 @@ describe('PopulationTabGroup Component', () => {
   // PopulationTabGroupをレンダリングするヘルパー関数
   const renderComponent = (selected: PopulationTabId) => {
     return render(
-      <PopulationTabGroup tabs={PopulationTabDefs} selected={selected} onClick={mockOnClick} />
+      <PopulationTabGroup tabs={populationTabDefs} selected={selected} onClick={mockOnClick} />
     );
   };
 
   // タブが正しく表示されることを確認
   it('renders the correct tabs', () => {
     renderComponent(PopulationTabId.TotalPopulation);
-    PopulationTabDefs.forEach((tab) => {
+    populationTabDefs.forEach((tab) => {
       const tabElement = screen.getByRole('button', { name: tab.label });
       expect(tabElement).toBeVisible();
     });
