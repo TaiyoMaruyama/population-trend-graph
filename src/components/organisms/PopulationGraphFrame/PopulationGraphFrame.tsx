@@ -18,7 +18,7 @@ const PopulationGraphFrame: React.FC<PrefectureGraphProps> = ({ prefectures }) =
       try {
         setPopulationData(await fetchPopulationData(prefectures));
       } catch {
-        throw new Error('Could not get data');
+        alert('Could not get data');
       }
     };
     getData();

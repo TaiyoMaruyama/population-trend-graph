@@ -1,5 +1,5 @@
 import { PopulationTabId } from '@/types/resas';
-import { populationData } from '@/utils/createPopulationData';
+import { demoPrefectures } from '@/utils/createPopulationData';
 import PopulationGraph from './PopulationGraph';
 import { PopulationGraphProps } from './PopulationGraph.types';
 import type { Meta, StoryObj } from '@storybook/react';
@@ -33,7 +33,7 @@ export const Primary: Story = {
     );
   },
   args: {
-    populationData,
+    ...demoPrefectures,
     tabValue: PopulationTabId.TotalPopulation,
   },
 };

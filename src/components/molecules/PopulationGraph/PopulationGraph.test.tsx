@@ -1,17 +1,18 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { PopulationTabId } from '@/types/resas';
-import { populationData } from '@/utils/createPopulationData';
+import { demoPopulationData } from '@/utils/createPopulationData';
 import PopulationGraph from './PopulationGraph';
 import '@testing-library/jest-dom';
 
+// ResizeObserverをモック
 global.ResizeObserver = class {
   observe() {}
   unobserve() {}
   disconnect() {}
 };
 
-// Mocking recharts
+// Rechartsをモック
 jest.mock('recharts', () => {
   const OriginalModule = jest.requireActual('recharts');
   return {
@@ -24,10 +25,12 @@ jest.mock('recharts', () => {
   };
 });
 
+// PopulationGraphコンポーネントのテスト
 describe('PopulationGraph', () => {
-  const mockPopulationData = [...populationData];
+  const mockPopulationData = [...demoPopulationData];
 
-  it('renders the population graph with data', async () => {
+  // グラフがデータを持って正しく描画されるかのテスト
+  it('renders the population graph with provided data', async () => {
     render(
       <PopulationGraph
         populationData={mockPopulationData}
@@ -35,15 +38,13 @@ describe('PopulationGraph', () => {
       />
     );
 
-    // グラフが描画されるのを待ちます
     const svgElement = await screen.findByTestId('population-graph');
-    expect(svgElement).toBeInTheDocument();
+    expect(svgElement).toBeVisible();
   });
 
-  it('handles empty population data', () => {
+  // 空の人口データを扱う場合のテスト
+  it('handles empty population data gracefully', () => {
     render(<PopulationGraph populationData={[]} tabValue={PopulationTabId.TotalPopulation} />);
-
-    // Ensure that the graph can handle empty data gracefully
     expect(screen.queryByText('(年)')).not.toBeInTheDocument();
     expect(screen.queryByText('(千人)')).not.toBeInTheDocument();
   });

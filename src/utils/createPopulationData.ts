@@ -1,7 +1,7 @@
 import { PopulationDataWithPrefecture, PopulationStructureLabel, Prefecture } from '@/types/resas';
 
 export const years = [1990, 1995, 2000, 2005, 2010, 2015, 2020];
-const prefectures: Prefecture[] = [
+export const demoPrefectures: Prefecture[] = [
   { prefCode: 1, prefName: '北海道' },
   { prefCode: 2, prefName: '青森県' },
   { prefCode: 3, prefName: '岩手県' },
@@ -17,7 +17,7 @@ export const generateStructure = (index: number) => {
   });
 };
 
-export const populationData: PopulationDataWithPrefecture[] = prefectures.map(
+export const demoPopulationData: PopulationDataWithPrefecture[] = demoPrefectures.map(
   (prefecture, index) => {
     return { populationStructures: generateStructure(index), ...prefecture };
   }
