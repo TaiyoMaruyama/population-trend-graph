@@ -37,7 +37,8 @@ describe('PopulationGraphFrame', () => {
     jest.restoreAllMocks();
   });
 
-  test('renders correctly and fetches population data', async () => {
+  // 正しい人口データをフェッチすることを確認
+  it('renders correctly and fetches population data', async () => {
     render(<PopulationGraphFrame prefectures={mockPrefectures} />);
 
     expect(screen.getByText('総人口')).toBeVisible();
@@ -50,13 +51,12 @@ describe('PopulationGraphFrame', () => {
     });
   });
 
-  test('handles fetch errors gracefully', async () => {
+  // データの取得エラー時の挙動
+  it('handles fetch errors gracefully', async () => {
     (fetchPopulationData as jest.Mock).mockRejectedValue(new Error('Fetch error'));
 
     const alertMock = jest.spyOn(window, 'alert').mockImplementation(() => {});
-
     render(<PopulationGraphFrame prefectures={mockPrefectures} />);
-
     await waitFor(() => {
       expect(alertMock).toHaveBeenCalledWith('Could not get data');
     });
