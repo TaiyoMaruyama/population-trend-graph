@@ -4,7 +4,6 @@
 .checkboxGroup {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
-  row-gap: spacing.$xs;
   padding: spacing.$sm;
   background-color: color.$background-white;
   overflow: auto;

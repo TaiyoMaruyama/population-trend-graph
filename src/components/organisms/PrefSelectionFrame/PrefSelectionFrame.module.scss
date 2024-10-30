@@ -1,5 +1,9 @@
 @use '../../../styles/variables/spacing' as spacing;
 
+.container {
+  padding: spacing.$md 0;
+}
+
 .frameHeader {
   display: flex;
   justify-content: space-between;

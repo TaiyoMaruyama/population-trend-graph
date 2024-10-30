@@ -25,13 +25,13 @@ const PrefSelectionFrame: React.FC<PrefSelectionFrameProps> = ({
   };
 
   return (
-    <>
+    <div className={styles.container}>
       <div className={styles.frameHeader}>
         <TextLabel label='都道府県を選択' />
         <CheckedManageFrame checkedSum={checkedPrefectures.length} onReset={handleReset} />
       </div>
       <PrefCheckboxGroup checkedList={checkedPrefectures} handleCheck={handleCheck} />
-    </>
+    </div>
   );
 };
 
