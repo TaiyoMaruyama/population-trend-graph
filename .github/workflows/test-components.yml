@@ -26,3 +26,4 @@ jobs:
       - run: npm run test:atoms
       - run: npm run test:molecules
       - run: npm run test:organisms
+      - run: npm run test:templates
