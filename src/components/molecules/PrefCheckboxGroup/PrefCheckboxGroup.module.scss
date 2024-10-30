@@ -1,5 +1,6 @@
 @use '../../../styles/variables/spacing' as spacing;
 @use '../../../styles/variables/colors' as color;
+@use '../../../styles/mixins/respond-to-mobile' as respond-to-mobile;
 
 .checkboxGroup {
   display: grid;
@@ -8,4 +9,8 @@
   background-color: color.$background-white;
   overflow: auto;
   max-height: 40vh;
+
+  @include respond-to-mobile.respond-to-mobile {
+    max-height: 30vh;
+  }
 }

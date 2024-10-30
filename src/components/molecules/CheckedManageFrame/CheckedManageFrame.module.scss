@@ -1,6 +1,13 @@
+@use '../../../styles/mixins/respond-to-mobile' as respond-to-mobile;
+@use '../../../styles/variables/spacing' as spacing;
+
 .frame {
+  width: 13rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 13rem;
+
+  @include respond-to-mobile.respond-to-mobile {
+    margin: spacing.$md 0 0 auto;
+  }
 }
