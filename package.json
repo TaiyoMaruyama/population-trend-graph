@@ -16,6 +16,7 @@
     "test:atoms": "jest --config jest.atoms.config.ts",
     "test:molecules": "jest --config jest.molecules.config.ts",
     "test:organisms": "jest --config jest.organisms.config.ts",
+    "test:templates": "jest --config jest.templates.config.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
