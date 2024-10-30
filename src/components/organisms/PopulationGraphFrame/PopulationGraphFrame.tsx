@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import fetchPopulationData from '@/api/fetchPopulationData';
+import Typography from '@/components/atoms/Typography/Typography';
 import PopulationGraph from '@/components/molecules/PopulationGraph/PopulationGraph';
 import PopulationTabGroup from '@/components/molecules/PopulationTabGroup/PopulationTabGroup';
 import { populationTabDefs } from '@/consts/PopulationTabDefs';
@@ -33,7 +34,14 @@ const PopulationGraphFrame: React.FC<PrefectureGraphProps> = ({ prefectures }) =
           disabled={prefectures.length === 0}
           onClick={setSelectedTab}
         />
-        <PopulationGraph populationData={populationData} tabValue={selectedTab} />
+        {populationData.length === 0 ? (
+          <div className={styles.noData}>
+            <Typography variant='h5' text='表示するグラフがありません' />
+            <Typography variant='p' text='都道府県を選択してください' />
+          </div>
+        ) : (
+          <PopulationGraph populationData={populationData} tabValue={selectedTab} />
+        )}
       </div>
     </div>
   );

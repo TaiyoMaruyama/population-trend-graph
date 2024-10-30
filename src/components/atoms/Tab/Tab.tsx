@@ -8,7 +8,7 @@ const Tab: React.FC<TabProps> = ({ label, selected, disabled, onClick }) => {
     <button
       className={tabStyle}
       disabled={disabled}
-      onClick={disabled ? undefined : onClick}
+      onClick={!selected && !disabled ? onClick : undefined}
       aria-disabled={disabled}
       aria-label={label}
       tabIndex={disabled ? -1 : 0}
