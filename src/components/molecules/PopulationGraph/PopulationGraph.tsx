@@ -6,8 +6,8 @@ import {
   CartesianGrid,
   XAxis,
   YAxis,
-  Tooltip,
   Legend,
+  Tooltip,
 } from 'recharts';
 import { PrefectureGraphData } from '@/components/organisms/PopulationGraphFrame/PopulationGraphFrame.types';
 import { getColor } from '@/utils/getColor';
@@ -29,7 +29,7 @@ const PopulationGraph: React.FC<PopulationGraphProps> = ({ populationData, tabVa
   return (
     <div className={styles.graph} data-testid='population-graph'>
       <ResponsiveContainer>
-        <LineChart data={graphData} margin={{ top: 40, right: 60, left: 10, bottom: 30 }}>
+        <LineChart data={graphData} margin={{ top: 40, right: 60, left: 0, bottom: 30 }}>
           {graphDataWithoutYear.map((key, index) => (
             <Line
               key={key}

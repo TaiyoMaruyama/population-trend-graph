@@ -1,0 +1,8 @@
+@use '../../../styles/variables/spacing' as spacing;
+@use '../../../styles/variables/breakpoint' as breakpoint;
+
+.container {
+  max-width: breakpoint.$max-width;
+  padding: spacing.$lg;
+  margin: 0 auto spacing.$lg auto;
+}

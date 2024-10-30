@@ -25,13 +25,15 @@ const PopulationGraphFrame: React.FC<PrefectureGraphProps> = ({ prefectures }) =
   }, [prefectures]);
 
   return (
-    <div className={styles.graphFrame}>
-      <PopulationTabGroup
-        tabs={populationTabDefs}
-        selected={selectedTab}
-        onClick={setSelectedTab}
-      />
-      <PopulationGraph populationData={populationData} tabValue={selectedTab} />
+    <div className={styles.container}>
+      <div className={styles.graphFrame}>
+        <PopulationTabGroup
+          tabs={populationTabDefs}
+          selected={selectedTab}
+          onClick={setSelectedTab}
+        />
+        <PopulationGraph populationData={populationData} tabValue={selectedTab} />
+      </div>
     </div>
   );
 };
