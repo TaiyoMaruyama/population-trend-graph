@@ -5,5 +5,9 @@
   display: flex;
   overflow-x: auto;
   white-space: nowrap;
-  border-bottom: spacing.$min solid color.$primary-main;
+  border-bottom: spacing.$xs solid color.$primary-main;
+
+  &.disabled {
+    border-bottom: spacing.$xs solid color.$primary-disabled;
+  }
 }

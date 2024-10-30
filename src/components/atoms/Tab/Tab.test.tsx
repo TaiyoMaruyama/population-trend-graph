@@ -7,6 +7,7 @@ describe('Tab Component', () => {
   const defaultProps = {
     label: 'Test Tab',
     selected: false,
+    disabled: false,
     onClick: jest.fn(),
   };
 
@@ -42,5 +43,18 @@ describe('Tab Component', () => {
     renderTab({ selected: false });
     fireEvent.click(screen.getByRole('button'));
     expect(defaultProps.onClick).toHaveBeenCalledTimes(1);
+  });
+
+  // disabledプロパティがtrueのとき、onClickが呼び出されないことを確認
+  it('does not call onClick when disabled', () => {
+    renderTab({ disabled: true });
+    fireEvent.click(screen.getByRole('button'));
+    expect(defaultProps.onClick).not.toHaveBeenCalled();
+  });
+
+  // disabledプロパティがtrueのとき、buttonがdisabled属性を持つことを確認
+  it('has the disabled attribute when disabled is true', () => {
+    renderTab({ disabled: true });
+    expect(screen.getByRole('button')).toBeDisabled();
   });
 });

@@ -17,5 +17,6 @@ export const Primary: Story = {
   args: {
     label: 'Tab',
     selected: false,
+    disabled: false,
   },
 };

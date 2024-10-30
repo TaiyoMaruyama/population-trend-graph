@@ -25,5 +25,6 @@ export const Primary: Story = {
   args: {
     tabs: populationTabDefs,
     selected: PopulationTabId.TotalPopulation,
+    disabled: false,
   },
 };

@@ -30,6 +30,7 @@ const PopulationGraphFrame: React.FC<PrefectureGraphProps> = ({ prefectures }) =
         <PopulationTabGroup
           tabs={populationTabDefs}
           selected={selectedTab}
+          disabled={prefectures.length === 0}
           onClick={setSelectedTab}
         />
         <PopulationGraph populationData={populationData} tabValue={selectedTab} />
