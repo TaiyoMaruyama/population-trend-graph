@@ -19,16 +19,13 @@ const PopulationGraphFrame: React.FC<PrefectureGraphProps> = ({ prefectures }) =
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ prefectures }),
         });
-
         if (!response.ok) {
           throw new Error('Could not get data');
         }
-
         const data: PopulationDataWithPrefecture[] = await response.json();
         setPopulationData(data);
       } catch (error: unknown) {
-        const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
-        alert(errorMessage);
+        setPopulationData([]);
       }
     };
 
