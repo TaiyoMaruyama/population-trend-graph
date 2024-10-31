@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
-import PopulationTrendGraph from './PopulationTrendGraph';
+import PopulationTrendGraph from './PopulationTrendGraph'; // 追加
 
 const meta: Meta = {
-  title: 'templates/PopulationTrendGraph',
+  title: 'organisms/PopulationTrendGraph',
   component: PopulationTrendGraph,
   tags: ['autodocs'],
 };
@@ -10,10 +10,12 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
-  render: () => (
-    <div style={{ padding: '20px' }}>
-      <PopulationTrendGraph />
-    </div>
-  ),
+export const PopulationTrendGraphPage: Story = {
+  render: () => {
+    return (
+      <div style={{ maxWidth: '1080px' }}>
+        <PopulationTrendGraph />
+      </div>
+    );
+  },
 };

@@ -9,7 +9,7 @@ const meta: Meta<PopulationTabGroupProps> = {
   title: 'molecules/PopulationTabGroup',
   component: PopulationTabGroup,
   tags: ['autodocs'],
-  args: { onClick: fn() },
+  args: { tabs: populationTabDefs, onClick: fn() },
   argTypes: {
     selected: {
       options: Object.values(PopulationTabId),
@@ -21,10 +21,16 @@ const meta: Meta<PopulationTabGroupProps> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Disabled: Story = {
   args: {
-    tabs: populationTabDefs,
     selected: PopulationTabId.TotalPopulation,
+    disabled: true,
+  },
+};
+
+export const WithElderlyPopulation: Story = {
+  args: {
+    selected: PopulationTabId.ElderlyPopulation,
     disabled: false,
   },
 };

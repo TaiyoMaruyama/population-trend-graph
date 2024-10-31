@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { PopulationTabId } from '@/types/resas';
-import { demoPopulationData } from '@/utils/createPopulationData';
+import { demoPopulationData } from '@/utils/demoData';
 import PopulationGraph from './PopulationGraph';
 import '@testing-library/jest-dom';
 

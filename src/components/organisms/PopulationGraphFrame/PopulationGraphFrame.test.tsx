@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import fetchPopulationData from '@/api/fetchPopulationData';
-import { demoPopulationData, demoPrefectures } from '@/utils/createPopulationData';
+import { demoPopulationData, demoPrefectures } from '@/utils/demoData';
 import PopulationGraphFrame from './PopulationGraphFrame';
 import '@testing-library/jest-dom';
 

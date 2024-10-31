@@ -7,16 +7,30 @@ const meta: Meta<TabProps> = {
   title: 'atoms/Tab',
   component: Tab,
   tags: ['autodocs'],
-  args: { onClick: fn() },
+  args: {
+    label: 'Tab',
+    selected: true,
+    disabled: false,
+    onClick: fn(),
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Primary: Story = {};
+
+export const Disabled: Story = {
   args: {
-    label: 'Tab',
+    label: 'Disabled Tab',
     selected: false,
-    disabled: false,
+    disabled: true,
+  },
+};
+
+export const DisabledWithSelected: Story = {
+  args: {
+    label: 'Disabled Tab',
+    disabled: true,
   },
 };
