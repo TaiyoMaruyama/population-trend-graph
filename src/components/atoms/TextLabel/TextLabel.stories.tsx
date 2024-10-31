@@ -6,13 +6,12 @@ const meta: Meta<TextLabelProps> = {
   title: 'atoms/TextLabel',
   component: TextLabel,
   tags: ['autodocs'],
+  args: {
+    label: 'TextLabel',
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
-  args: {
-    label: 'TextLabel',
-  },
-};
+export const Primary: Story = {};

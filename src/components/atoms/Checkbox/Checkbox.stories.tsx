@@ -7,16 +7,21 @@ const meta: Meta<CheckboxProps> = {
   title: 'atoms/Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
-  args: { onChange: fn() },
+  args: {
+    id: 'checkbox',
+    label: '東京都',
+    checked: false,
+    onChange: fn(),
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Primary: Story = {};
+
+export const LabelWithLineBreak: Story = {
   args: {
-    id: 'checkbox',
-    label: 'Checkbox',
-    checked: false,
+    label: '大阪府大阪市',
   },
 };

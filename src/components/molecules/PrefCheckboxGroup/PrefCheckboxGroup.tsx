@@ -8,13 +8,14 @@ import { PrefCheckboxGroupProps } from './PrefCheckboxGroup.types';
 const PrefCheckboxGroup: React.FC<PrefCheckboxGroupProps> = ({ checkedList, handleCheck }) => {
   const { prefectures, isError, isLoading } = useFetchPrefecture();
 
-  if (isError) return <div>Error loading prefectures</div>;
-  if (isLoading) return <div>Loading...</div>;
-
   const isChecked = (id: number) => checkedList.some((element) => element.prefCode === id);
+  const checkboxGroupStyle = `${styles.background} ${styles.checkboxGroup}`;
+
+  if (isError) return <div className={styles.background}>Error loading prefectures</div>;
+  if (isLoading) return <div className={styles.background}>Loading...</div>;
 
   return (
-    <div className={styles.checkboxGroup}>
+    <div className={checkboxGroupStyle}>
       {prefectures?.map((prefecture) => (
         <Checkbox
           key={prefecture.prefCode}

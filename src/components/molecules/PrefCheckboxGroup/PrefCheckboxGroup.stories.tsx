@@ -14,6 +14,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
+  render: (args) => (
+    <div style={{ maxWidth: '1080px' }}>
+      <PrefCheckboxGroup {...args} />
+    </div>
+  ),
   args: {
     checkedList: [
       { prefCode: 3, prefName: '岩手県' },

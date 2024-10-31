@@ -8,5 +8,6 @@ export interface PopulationTab {
 export interface PopulationTabGroupProps {
   tabs: PopulationTab[];
   selected: PopulationTabId;
+  disabled: boolean;
   onClick: (id: PopulationTabId) => void;
 }

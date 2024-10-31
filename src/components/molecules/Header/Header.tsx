@@ -7,7 +7,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
 
   return (
     <header className={headerStyle}>
-      <Typography variant='h5' text={title} />
+      <Typography variant='h5' bold text={title} />
     </header>
   );
 };

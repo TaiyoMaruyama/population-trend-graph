@@ -1,16 +1,17 @@
 import styles from './Tab.module.scss';
 import { TabProps } from './Tab.types';
 
-const Tab: React.FC<TabProps> = ({ label, selected, onClick }) => {
-  const tabStyle = `${styles.tab} ${selected ? styles.selected : ''}`;
+const Tab: React.FC<TabProps> = ({ label, selected, disabled, onClick }) => {
+  const tabStyle = `${styles.tab} ${selected ? styles.selected : ''} ${disabled ? styles.disabled : ''}`;
 
   return (
     <button
       className={tabStyle}
-      onClick={selected ? undefined : onClick}
-      aria-disabled={selected}
+      disabled={disabled}
+      onClick={!selected && !disabled ? onClick : undefined}
+      aria-disabled={disabled}
       aria-label={label}
-      tabIndex={selected ? -1 : 0}
+      tabIndex={disabled ? -1 : 0}
     >
       {label}
     </button>

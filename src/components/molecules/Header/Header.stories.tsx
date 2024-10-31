@@ -6,13 +6,12 @@ const meta: Meta<HeaderProps> = {
   title: 'molecules/Header',
   component: Header,
   tags: ['autodocs'],
+  args: {
+    title: 'Header Title',
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
-  args: {
-    title: 'Header Title',
-  },
-};
+export const Primary: Story = {};
