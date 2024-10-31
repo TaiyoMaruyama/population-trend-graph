@@ -1,0 +1,18 @@
+@use '../../../styles/variables/spacing' as spacing;
+@use '../../../styles/mixins/respond-to-mobile' as respond-to-mobile;
+
+.container {
+  padding: spacing.$md 0;
+}
+
+.frameHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: spacing.$sm;
+
+  @include respond-to-mobile.respond-to-mobile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

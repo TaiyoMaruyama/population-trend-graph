@@ -1,0 +1,22 @@
+@use '../../../styles/variables/spacing' as spacing;
+@use '../../../styles/variables/colors' as color;
+@use '../../../styles/mixins/respond-to-mobile' as respond-to-mobile;
+
+.background {
+  background-color: color.$background-white;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+
+  @include respond-to-mobile.respond-to-mobile {
+    height: 30vh;
+  }
+}
+
+.checkboxGroup {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+  padding: spacing.$sm;
+}

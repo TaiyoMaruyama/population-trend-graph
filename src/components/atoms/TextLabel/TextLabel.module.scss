@@ -1,0 +1,7 @@
+@use '../../../styles/variables/colors' as color;
+@use '../../../styles/variables/spacing' as spacing;
+
+.textLabel {
+  border-left: spacing.$sm solid color.$primary-main;
+  padding-left: spacing.$sm;
+}

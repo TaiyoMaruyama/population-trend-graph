@@ -1,0 +1,7 @@
+@use '../variables/breakpoint' as breakpoint;
+
+@mixin respond-to-mobile {
+  @media (max-width: breakpoint.$mobile) {
+    @content;
+  }
+}

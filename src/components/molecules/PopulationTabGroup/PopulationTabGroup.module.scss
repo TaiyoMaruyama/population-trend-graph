@@ -1,0 +1,13 @@
+@use '../../../styles/variables/colors' as color;
+@use '../../../styles/variables/spacing' as spacing;
+
+.tabGroup {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  border-bottom: spacing.$xs solid color.$primary-main;
+
+  &.disabled {
+    border-bottom: spacing.$xs solid color.$primary-disabled;
+  }
+}
