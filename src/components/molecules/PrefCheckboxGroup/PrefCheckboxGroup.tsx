@@ -1,5 +1,3 @@
-'use client';
-
 import Checkbox from '@/components/atoms/Checkbox/Checkbox';
 import useFetchPrefecture from '@/hooks/useFetchPrefecture';
 import styles from './PrefCheckboxGroup.module.scss';

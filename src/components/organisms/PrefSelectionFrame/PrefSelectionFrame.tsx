@@ -1,5 +1,3 @@
-'use client';
-
 import TextLabel from '@/components/atoms/TextLabel/TextLabel';
 import CheckedManageFrame from '@/components/molecules/CheckedManageFrame/CheckedManageFrame';
 import PrefCheckboxGroup from '@/components/molecules/PrefCheckboxGroup/PrefCheckboxGroup';
