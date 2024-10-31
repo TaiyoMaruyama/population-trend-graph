@@ -1,4 +1,4 @@
-import { BASE_URL } from '@/api/fetcher';
+import { BASE_URL } from '@/app/api/fetcher';
 import {
   PopulationDataWithPrefecture,
   PopulationStructureResponse,

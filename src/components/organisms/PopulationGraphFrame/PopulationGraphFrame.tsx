@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import fetchPopulationData from '@/api/fetchPopulationData';
+import fetchPopulationData from '@/app/api/fetchPopulationData';
 import Typography from '@/components/atoms/Typography/Typography';
 import PopulationGraph from '@/components/molecules/PopulationGraph/PopulationGraph';
 import PopulationTabGroup from '@/components/molecules/PopulationTabGroup/PopulationTabGroup';

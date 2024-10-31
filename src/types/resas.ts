@@ -1,3 +1,7 @@
+export interface ApiError {
+  message: string;
+}
+
 export interface Prefecture {
   prefCode: number;
   prefName: string;
